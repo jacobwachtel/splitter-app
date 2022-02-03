@@ -1,0 +1,363 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Strong cyan: hsl(172, 67%, 45%)
+
+### Neutral
+
+- Very dark cyan: hsl(183, 100%, 15%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Dark grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%)
+
+## Typography
+
+### Body Copy
+
+- Font size (form inputs): 24px
+
+### Font
+
+- Family: [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+- Weights: 400, 500, 700 */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    /* Primary */
+    --strong-cyan: hsl(172, 67%, 45%);
+
+    /* Neutral */
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan-1: hsl(186, 14%, 43%);
+    --dark-grayish-cyan-2: hsl(184, 14%, 56%);
+    --light-grayish-cyan-1: hsl(185, 41%, 84%);
+    --light-grayish-cyan-2: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Space Mono',
+    monospace;
+    height: 100vh;
+    background-color: var(--light-grayish-cyan-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c4e0e9;
+}
+
+h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding-bottom: 5rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+}
+
+span {
+    display: block;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+h4 {
+    font-size: 1.3rem;
+    padding-bottom: .8rem;
+    opacity: .7;
+}
+
+.header {
+    display: block;
+}
+
+.container {
+    height: 40rem;
+    width: 70rem;
+    background-color: var(--white);
+    display: flex;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.container__left {
+    width: 50%;
+    padding-right: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bill,
+.people {
+    width: 100%;
+    color: hsl(186, 14%, 43%);
+    opacity: 1;
+}
+
+.bill__input,
+.people__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: hsl(184, 14%, 56%);
+}
+
+.bill__input--icon,
+.people__input--icon {
+    width: 1rem;
+}
+
+.bill__input--amount,
+.people__input--amount {
+    width: 100%;
+    border: none;
+    font-size: 2.3rem;
+    border: hidden;
+    text-align: right;
+    color: #111;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+}
+
+.bill__input--amount::placeholder,
+.people__input--amount::placeholder {
+    color: var(--dark-grayish-cyan-2);
+    text-align: right;
+    font-style: monospace !important;
+    font-size: 2rem;
+    font-weight: 400;
+
+}
+
+.selected-tip {
+    width: 100%;
+}
+
+.selected-tip__buttons {
+    display: grid;
+    grid-template-rows: 4rem 4rem;
+    grid-template-columns: 9rem 9rem 9rem;
+    grid-gap: 1rem;
+}
+
+.btn {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    padding: .5rem 3rem;
+    border-radius: 5px;
+    font-size: 1.7rem;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem .4rem rgba(0, 0, 0, .3);
+
+}
+
+.btn:active {
+    background-color: var(--strong-cyan);
+    transform: translateY(.1rem);
+    box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .3);
+
+}
+
+.custom {
+    outline: none;
+    background-color: var(--light-grayish-cyan-2);
+    color: var(--dark-grayish-cyan-1);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+.custom::placeholder {
+    color: var(--very-dark-cyan);
+    text-align: center;
+    font-style: 'Space Mono' !important;
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.custom:focus {
+    outline: none;
+}
+
+.container__right {
+    width: 50%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--very-dark-cyan);
+    border-radius: 10px;
+    color: var(--white);
+
+}
+
+.content__total {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content__total--tip,
+.content__total--total {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.content__total--tip {
+    padding-bottom: 2rem;
+}
+
+.content__total--tip h4, .content__total--total h4{
+    color: white;
+    opacity: 1;
+    letter-spacing: 1px;
+}
+
+.content__total--tip span, .content__total--total span {
+    font-size: 1rem;
+    padding-top: .5rem;
+    color: var(--dark-grayish-cyan-2);
+}
+
+.content__total--tip h3, .content__total--total h3 {
+    font-size: 3.5rem;
+    color: var(--strong-cyan);
+}
+
+#reset {
+    width: 100%;
+    background-color: var(--strong-cyan);
+    text-decoration: none;
+    color: var(--very-dark-cyan);
+    font-size: 1.8rem;
+    text-align: center;
+    border-radius: 4px;
+    padding: .8rem 0;
+    font-weight: 700;
+    
+    transition: all .1s;
+}
+
+#reset:hover {
+    transform: translateY(-3px);
+    box-shadow: .5rem .5rem .5rem rgba(38, 192, 171, .3);
+}
+
+#reset:active {
+    transform: translateY(1px);
+    box-shadow: .2rem .2rem .2rem rgba(38, 192, 171, .15);
+}
+
+@media (max-width: 500px) {
+
+    /* html{
+        font-size: 58%;
+    } */
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        width: 100%;
+        height: 90rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        margin: 0;
+    }
+
+    .container__left {
+        width: 90%;
+        height: 50%;
+
+    }
+
+    .bill__input--amount, .people__input--amount {
+        font-size: 2rem;
+    }
+
+    .selected-tip__buttons {
+        display: grid;
+        grid-template-rows: 4rem 4rem;
+        grid-template-columns: 10rem 10rem 10rem;
+        grid-gap: 1rem;
+
+    }
+
+    .container__right {
+        width: 90%;
+        height: 50%;
+    }
+
+    .container__right h4 {
+        font-size: 2rem;
+    }
+
+    .container__right h3 {
+        font-size: 2.5rem;
+    }
+
+}
+
+
+
+
+

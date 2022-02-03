@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <title>Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
+  
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+
+
+
+<body>
+  <header class="header">
+    <h1><span>spli</span><span>tter</span></h1>
+  </header>
+
+  <main class="container">
+
+    <div class="container__left">
+      <div class="bill">
+        <h4>Bill</h4>
+        <div class="bill__input">
+          <img src="./images/icon-dollar.svg" alt="dollar icon" class="bill__input--icon">
+          <input type="number" placeholder="0" class="bill__input--amount" id="bill"/>
+        </div>
+      </div>
+
+      <div class="selected-tip">
+        <h4>Select Tip %</h4>
+        <div class="selected-tip__buttons">
+          <button class="btn" href="#">5%</button>
+          <button class="btn" href="#">10%</button>
+          <button class="btn" href="#">15%</button>
+          <button class="btn" href="#">20%</button>
+          <button class="btn" href="#">25%</button>          
+          <input class="custom" type="number" placeholder="Custom" id="tip"></input>
+        </div>
+      </div>
+
+      <div class="people">
+        <h4>Number of People</h4>
+        <div class="people__input">
+          <img src="./images/icon-person.svg" alt="person icon" class="people__input--icon">
+          <input type="number" placeholder="0" class="people__input--amount" id="people"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="container__right">
+      <div class="content__total">
+        <div class="content__total--tip">
+          <!-- <div class="tip__amount-content"> -->
+          <h4>Tip Amount<span>/ person</span></h4>            
+          <!-- </div> -->
+          <h3 id="total-amount">$0.00</h3>
+        </div>
+
+
+        <div class="content__total--total">
+          <div class="tip__total-content">
+            <h4>Total<span>/ person</span></h4>            
+          </div>
+          <h3 id="total-people">$0.00</h3>
+        </div>
+      </div>
+      <a href="#" id="reset">RESET</a>
+    </div>
+  </main>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Jacob Wachtel</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
