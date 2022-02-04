@@ -4,9 +4,8 @@ let tip = '';
 let amountOfPeople;
 let billAmount;
 let customTip;
-const tipButtons = document.querySelectorAll('.btn');
 
-const tipButtonReset = () => {
+const resetTipButtons = () => {
    tipButtons.forEach((btn) => {
       btn.style.backgroundColor = 'hsl(183, 100%, 15%)';
       btn.style.color = 'hsl(0, 0%, 100%)';
@@ -15,7 +14,7 @@ const tipButtonReset = () => {
 
 // GETS INPUT FROM DOCUMENT
 
-const getInputs = () => {
+const getValueFromInputs = () => {
    amountOfPeople = parseInt(document.getElementById('people').value);
    billAmount = parseFloat(document.getElementById('bill').value);
 };
@@ -23,8 +22,8 @@ const getInputs = () => {
 // VALIDATES IF ANYTHING WAS ENTERED INTO THE INPUT
 
 const checkInputs = () => {
-   getInputs();
-   if (isNaN(billAmount) || isNaN(amountOfPeople)) {
+   getValueFromInputs();
+   if (isNaN(billAmount) || isNaN(amountOfPeople) || isNaN(tip)) {
       return;
    }
    updateBill();
@@ -45,10 +44,11 @@ const updateBill = () => {
 };
 
 // UPDATES BUTTON STYLE WHEN CLICKED AND UPDATES STYLES
+const tipButtons = document.querySelectorAll('.btn');
 
 tipButtons.forEach((btn) =>
    btn.addEventListener('click', (e) => {
-      tipButtonReset();
+      resetTipButtons();
       btn.style.backgroundColor = 'hsl(172, 67%, 45%)';
       btn.style.color = '#111';
       tip = parseFloat(e.target.innerText) / 100;
@@ -70,7 +70,7 @@ document.getElementById('bill').addEventListener('input', () => {
 });
 
 document.getElementById('tip').addEventListener('input', () => {
-   tipButtonReset();
+   resetTipButtons();
    tip = parseInt(document.getElementById('tip').value) / 100;
    checkInputs();
 });
@@ -81,5 +81,5 @@ document.getElementById('reset').addEventListener('click', () => {
    document.getElementById('people').value = '';
    document.getElementById('total-people').innerText = '$0.00';
    document.getElementById('total-amount').innerText = '$0.00';
-   tipButtonReset();
+   resetTipButtons();
 });
