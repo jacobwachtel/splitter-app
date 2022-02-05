@@ -81,6 +81,10 @@ span {
     display: block;
 }
 
+input {
+    background-color: transparent;
+}
+
 input:focus {
     outline: none;
 }
@@ -207,7 +211,7 @@ h4 {
     width: 9rem;
     height: 4rem;
     outline: none;
-    background-color: var(--light-grayish-cyan-2);
+    /* background-color: var(--light-grayish-cyan-2); */
     color: #111;
     border: none;
     border-radius: 10px;
@@ -299,6 +303,10 @@ h4 {
 #reset:active {
     transform: translateY(1px);
     box-shadow: .2rem .2rem .2rem rgba(38, 192, 171, .15);
+}
+
+#theme-listener {
+    cursor: pointer;
 }
 
 @media (max-width: 670px) {
