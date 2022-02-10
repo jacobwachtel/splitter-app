@@ -100,7 +100,3 @@ theme.addEventListener('click', () => {
       lightModeProps();
    }
 });
-
-
-
-const
