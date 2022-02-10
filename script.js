@@ -63,7 +63,7 @@ tipButtons.forEach((btn) =>
 
 const resetTipButtons = () => {
    tipButtons.forEach((btn) => {
-      btn.style.backgroundColor = 'hsl(183, 100%, 15%)';
+      btn.style.backgroundColor = '#eee';
       btn.style.color = 'hsl(0, 0%, 100%)';
    });
 };
@@ -79,24 +79,55 @@ document.getElementById('reset').addEventListener('click', () => {
 
 // Light mode and Dark mode
 const lightModeProps = () => {
-   document.body.style.backgroundColor = '#c4e0e9';
-   container.backgroundColor = 'var(--white)';
+   document.body.style.backgroundColor = '#eee';
+   let shapeFill = document.getElementsByClassName('shape-fill')[0].style;
+   container.backgroundColor = '#eee';
+   shapeFill.fill = '#eee';
+   theme.src = './images/icon-moon.svg';
+   let h4 = document.querySelectorAll('h4');
+   h4.forEach((el) => {
+      el.style.color = 'rgb(39, 78, 74)';
+   });
+   let inputs = document.querySelectorAll('input');
+   inputs.forEach((input) => {
+      input.style.color = '#eee';
+   });
+   document.getElementsByClassName('bill__input')[0].style.border =
+      '1px dotted rgba(0, 0, 0, .1)';
+   document.getElementsByClassName('people__input')[0].style.border =
+      '1px dotted rgba(0, 0, 0, .1)';
+   // console.log(document.getElementsByClassName('bill__input'));
    darkMode = false;
 };
 
 const darkModeProps = () => {
-   document.body.style.backgroundColor = 'rgb(20,29,47';
+   let shapeFill = document.getElementsByClassName('shape-fill')[0].style;
+   document.body.style.backgroundColor = '#04293A';
+   shapeFill.fill = '#04293A';
+   let h4 = document.querySelectorAll('h4');
+   h4.forEach((el) => {
+      el.style.color = '#eee';
+   });
+   document.getElementsByClassName('bill__input')[0].style.border =
+      '1px dotted rgba(255, 255, 255, .1)';
+   document.getElementsByClassName('people__input')[0].style.border =
+      '1px dotted rgba(255, 255, 255, .1)';
+
+   let inputs = document.querySelectorAll('input');
+   inputs.forEach((input) => {
+      input.style.color = '#eee';
+      input.style.backgroundColor = '';
+   });
    theme.src = './images/icon-sun.svg';
    darkMode = true;
-   container.backgroundColor = '#1e2a47';
+   container.backgroundColor = '#04293A';
 };
 
 let theme = document.getElementById('theme-listener');
 theme.addEventListener('click', () => {
-   console.log(theme);
    if (darkMode == false) {
       darkModeProps();
-   } else {
+   } else if (darkMode == true) {
       lightModeProps();
    }
 });
